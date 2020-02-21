@@ -164,10 +164,10 @@ Project Link: [https://github.com/jhyoung09/BUMS](https://github.com/jhyoung09/B
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [forks-shield]: https://img.shields.io/github/forks/jhyoung09/BUMS?style=flat-square
-[forks-url]: https://github.com/jhyoung09/ReadMeTemplate/network/members
+[forks-url]: https://github.com/jhyoung09/BUMS/network/members
 [stars-shield]: https://img.shields.io/github/stars/jhyoung09/BUMS?style=flat-square
-[stars-url]: https://github.com/jhyoung09/ReadMeTemplate/stargazers
+[stars-url]: https://github.com/jhyoung09/BUMS/stargazers
 [issues-shield]: https://img.shields.io/github/issues/jhyoung09/BUMS?style=flat-square
-[issues-url]: https://github.com/jhyoung09/ReadMeTemplate/issues
+[issues-url]: https://github.com/jhyoung09/BUMS/issues
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/jameshunteryoung/p
