@@ -8,25 +8,25 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/jhyoung09/My-ReadMe-Template/">
+  <a href="https://github.com/jhyoung09/BUMS/">
     <img src="./aBeardedOwl.png" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">Read Me Template</h3>
+  <h3 align="center">BUMS</h3>
 
   <p align="center">
-    A Read Me template for your projects!
+    Back Up My Shtuff
     <br />
-    <a href="https://github.com/jhyoung09/My-ReadMe-Template/"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/jhyoung09/BUMS/"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/jhyoung09/My-ReadMe-Template/">View Demo</a>
+    <a href="https://github.com/jhyoung09/BUMS/">View Demo</a>
     ·
-    <a href="https://github.com/jhyoung09/My-ReadMe-Template/issues">Report Bug</a>
+    <a href="https://github.com/jhyoung09/BUMS/issues">Report Bug</a>
     ·
-    <a href="https://github.com/jhyoung09/My-ReadMe-Template/issues">Request Feature</a>
+    <a href="https://github.com/jhyoung09/BUMS/issues">Request Feature</a>
     ·
-    <a href="https://github.com/jhyoung09/My-ReadMe-Template/pulls">Send a Pull Request</a>
+    <a href="https://github.com/jhyoung09/BUMS/pulls">Send a Pull Request</a>
   </p>
 </p>
 
@@ -55,22 +55,20 @@
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
-There are many great README templates available on GitHub, however, I didn't find one that really suit my needs so I created this enhanced one. I want to create a README template so amazing that it'll be the last one you ever need.
+This project is to create a Python program that will gather input and options from the End User, and then based on those options sync files between two folder locations.
 
-Here's why:
-* Your time should be focused on creating something amazing. A project that solves a problem and helps others
-* You shouldn't be doing the same tasks over and over like creating a README from scratch
-* You should element DRY principles to the rest of your life :smile:
+The options to gather from the End User will be:
+* How to present the data
+* If the End User wants a report generated, and what format to generate that report in (print to screen, or .txt)
+* Input the folders the End User wants to sync between
+* Add those folders to a CONFIG file for easy selection next time
+* Choose if you want to PUSH from 1 folder to the next, PULL from 1 folder to the next, or do both
+* Write a log of all the actions performed
 
-Of course, no one template will serve all projects since your needs may be different. So I'll be adding more in the near future. You may also suggest changes by forking this repo and creating a pull request or opening an issue.
-
-A list of commonly used resources that I find helpful are listed in the acknowledgements.
 
 ### Built With
 This section should list any major frameworks that you built your project using. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
-* [Bootstrap](https://getbootstrap.com)
-* [JQuery](https://jquery.com)
-* [Laravel](https://laravel.com)
+* [Python 3.8.1](https://python.org)
 
 
 
@@ -118,7 +116,7 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 <!-- ROADMAP -->
 ## Roadmap
 
-See the [open issues](https://github.com/jhyoung09/My-ReadMe-Template/issues) for a list of proposed features (and known issues).
+See the [open issues](https://github.com/jhyoung09/BUMS/issues) for a list of proposed features (and known issues).
 
 
 
@@ -148,7 +146,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 James Hunter Young - hnter@youngs.us
 
-Project Link: [https://github.com/jhyoung09/repo_name](https://github.com/jhyoung09/My-ReadMe-Template)
+Project Link: [https://github.com/jhyoung09/BUMS](https://github.com/jhyoung09/BUMS)
 
 
 
@@ -165,11 +163,11 @@ Project Link: [https://github.com/jhyoung09/repo_name](https://github.com/jhyoun
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[forks-shield]: https://img.shields.io/github/forks/jhyoung09/My-ReadMe-Template?style=flat-square
+[forks-shield]: https://img.shields.io/github/forks/jhyoung09/BUMS?style=flat-square
 [forks-url]: https://github.com/jhyoung09/ReadMeTemplate/network/members
-[stars-shield]: https://img.shields.io/github/stars/jhyoung09/My-ReadMe-Template?style=flat-square
+[stars-shield]: https://img.shields.io/github/stars/jhyoung09/BUMS?style=flat-square
 [stars-url]: https://github.com/jhyoung09/ReadMeTemplate/stargazers
-[issues-shield]: https://img.shields.io/github/issues/jhyoung09/My-ReadMe-Template?style=flat-square
+[issues-shield]: https://img.shields.io/github/issues/jhyoung09/BUMS?style=flat-square
 [issues-url]: https://github.com/jhyoung09/ReadMeTemplate/issues
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/jameshunteryoung/p
