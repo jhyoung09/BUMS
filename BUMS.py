@@ -80,11 +80,13 @@ def ask(report, dir1, dir2, action):
     return dir2
     return action
 
-
+def report():
+    logger.debug('### STARTING REPORT ###')
 
 def main():
     logger.debug('### STARTING MAIN ###')
     ask(report, dir1, dir2, action)
+    report()
     logger.debug('### ENDING MAIN ###')
 
 
