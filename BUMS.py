@@ -15,13 +15,9 @@ from logzero import logger, logfile
 
 
 #   global variables
-report = int()
-dir1 = int()
-dir2 = int()
-action = int()
 
 
-def ask(report, dir1, dir2, action):
+def ask():
     logger.debug('### STARTING ASK ###')
     
     #   the REPORT
@@ -75,18 +71,16 @@ def ask(report, dir1, dir2, action):
         action = str('ACTION ERROR')
     logger.info(action)
     
-    return report
-    return dir1
-    return dir2
-    return action
+    return report, dir1, dir2,  action
 
-def report():
-    logger.debug('### STARTING REPORT ###')
+def reporting(report, dir1, dir2, action):
+    logger.debug('### STARTING REPORTING ###')
 
     #   set log information
     logger.debug('# SETTING LOGGING INFO #')
+
     if 'TEXT' in report:
-        logzero.loglevel(logger.info)
+        logzero.loglevel(20)
         logzero.logfile('./logs/BUMS_REPORT.txt') #    need to add the date time function and pull that in here
         logger.info('User selected {} for their report.'.format(report))
         logger.info('User selected {} as dir1 and {} as dir2'.format(dir1,dir2))
@@ -94,10 +88,22 @@ def report():
     else:
         logger.debug('User choose not to use a report.')
 
+def date():
+    date = datetime.datetime.now()
+    return date.strftime('%d %m %Y')
+
 def main():
+    logzero.loglevel(10)
+    logzero.logfile('./logs/BUMS_LOG.txt')
     logger.debug('### STARTING MAIN ###')
-    ask(report, dir1, dir2, action)
-    report()
+
+    logger.debug('# SETTING report, dir1, dir2, action VARIABLES #')
+    report, dir1, dir2, action = ask()
+
+    logger.debug('# SETTING date VARIABLE #')
+
+    reporting(report, dir1, dir2, action)
+
     logger.debug('### ENDING MAIN ###')
 
 
