@@ -15,13 +15,9 @@ from logzero import logger, logfile
 
 
 #   global variables
-report = str()
-dir1 = str()
-dir2 = str()
-action = str()
 
 
-def ask(report, dir1, dir2, action):
+def ask():
     logger.debug('### STARTING ASK ###')
     
     #   the REPORT
@@ -77,11 +73,12 @@ def ask(report, dir1, dir2, action):
     
     return report, dir1, dir2,  action
 
-def reporting():
+def reporting(report, dir1, dir2, action):
     logger.debug('### STARTING REPORTING ###')
 
     #   set log information
     logger.debug('# SETTING LOGGING INFO #')
+
     if 'TEXT' in report:
         logzero.loglevel(logger.info)
         logzero.logfile('./logs/BUMS_REPORT.txt') #    need to add the date time function and pull that in here
@@ -93,8 +90,11 @@ def reporting():
 
 def main():
     logger.debug('### STARTING MAIN ###')
-    ask(report, dir1, dir2, action)
-    reporting()
+    
+    logger.debug('# SETTING report, dir1, dir2, action VARIABLES #')
+    report, dir1, dir2, action = ask()
+
+    reporting(report, dir1, dir2, action)
     logger.debug('### ENDING MAIN ###')
 
 
