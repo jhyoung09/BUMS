@@ -15,10 +15,10 @@ from logzero import logger, logfile
 
 
 #   global variables
-report = int()
-dir1 = int()
-dir2 = int()
-action = int()
+report = str()
+dir1 = str()
+dir2 = str()
+action = str()
 
 
 def ask(report, dir1, dir2, action):
