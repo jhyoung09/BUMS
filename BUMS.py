@@ -80,7 +80,7 @@ def reporting(report, dir1, dir2, action):
     logger.debug('# SETTING LOGGING INFO #')
 
     if 'TEXT' in report:
-        logzero.loglevel(10)
+        logzero.loglevel(20)
         logzero.logfile('./logs/BUMS_REPORT.txt') #    need to add the date time function and pull that in here
         logger.info('User selected {} for their report.'.format(report))
         logger.info('User selected {} as dir1 and {} as dir2'.format(dir1,dir2))
@@ -88,11 +88,19 @@ def reporting(report, dir1, dir2, action):
     else:
         logger.debug('User choose not to use a report.')
 
+def date():
+    date = datetime.datetime.now()
+    return date.strftime('%d %m %Y')
+
 def main():
+    logzero.loglevel(10)
+    logzero.logfile('./logs/BUMS_LOG.txt')
     logger.debug('### STARTING MAIN ###')
 
     logger.debug('# SETTING report, dir1, dir2, action VARIABLES #')
     report, dir1, dir2, action = ask()
+
+    logger.debug('# SETTING date VARIABLE #')
 
     reporting(report, dir1, dir2, action)
 
