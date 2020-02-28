@@ -75,13 +75,10 @@ def ask(report, dir1, dir2, action):
         action = str('ACTION ERROR')
     logger.info(action)
     
-    return report
-    return dir1
-    return dir2
-    return action
+    return report, dir1, dir2,  action
 
-def report():
-    logger.debug('### STARTING REPORT ###')
+def reporting():
+    logger.debug('### STARTING REPORTING ###')
 
     #   set log information
     logger.debug('# SETTING LOGGING INFO #')
@@ -97,7 +94,7 @@ def report():
 def main():
     logger.debug('### STARTING MAIN ###')
     ask(report, dir1, dir2, action)
-    report()
+    reporting()
     logger.debug('### ENDING MAIN ###')
 
 
