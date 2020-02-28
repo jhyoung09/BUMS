@@ -1,0 +1,4 @@
+[I 200228 15:00:47 BUMS:85] User selected TEXT for their report.
+[I 200228 15:00:47 BUMS:86] User selected 123 as dir1 and 456 as dir2
+[I 200228 15:00:47 BUMS:87] User selected to PUSH between the folders
+[D 200228 15:00:47 BUMS:99] ### ENDING MAIN ###
