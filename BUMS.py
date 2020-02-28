@@ -11,7 +11,7 @@
 
 #   imports
 import logzero
-from logzero import logger
+from logzero import logger, logfile
 
 
 #   global variables
@@ -82,6 +82,17 @@ def ask(report, dir1, dir2, action):
 
 def report():
     logger.debug('### STARTING REPORT ###')
+
+    #   set log information
+    logger.debug('# SETTING LOGGING INFO #')
+    if 'TEXT' in report:
+        logzero.loglevel(logger.info)
+        logzero.logfile('./logs/BUMS_REPORT.txt') #    need to add the date time function and pull that in here
+        logger.info('User selected {} for their report.'.format(report))
+        logger.info('User selected {} as dir1 and {} as dir2'.format(dir1,dir2))
+        logger.info('User selected to {} between the folders'.format(action))
+    else:
+        logger.debug('User choose not to use a report.')
 
 def main():
     logger.debug('### STARTING MAIN ###')
