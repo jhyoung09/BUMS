@@ -12,6 +12,7 @@
 #   imports
 import logzero, os, filecmp
 from logzero import logger, logfile
+from filecmp import dircmp
 
 
 
@@ -93,15 +94,15 @@ def date():
     date = datetime.datetime.now()
     return date.strftime('%d %m %Y')
 
-def dir_compare(dir1, dir2, prefix1='.', prefix2='.'):
-    logger.debug('### STARTING DIR_COMPARE ###')
+def dir_compare(dir1, dir2, prefix='.'):
+    """Return a recursive dircmp comparison report as a dictionary."""
 
     comparison = filecmp.dircmp(dir1, dir2)
 
     data = {
-        "left": ["{}{}{}".format(prefix1, os.sep, i) for i in comparison.left_only],
-        "right": ["{}{}{}".format(prefix2, os.sep, i) for i in comparison.right_only],
-        "both": ["{}{}{}***{}{}{}".format(prefix1, os.sep, i, prefix2, os.sep, i) for i in comparison.common_files],
+        'left': [r'{}/{}'.format(prefix, i) for i in comparison.left_only],
+        'right': [r'{}/{}'.format(prefix, i) for i in comparison.right_only],
+        'both': [r'{}/{}'.format(prefix, i) for i in comparison.common_files],
     }
 
     for datalist in data.values():
@@ -110,19 +111,22 @@ def dir_compare(dir1, dir2, prefix1='.', prefix2='.'):
     if comparison.common_dirs:
         for folder in comparison.common_dirs:
             # Update prefix to include new sub_folder
-            prefix1 = os.path.normpath(os.path.join(folder1, folder))
-            prefix2 = os.path.normpath(os.path.join(folder2, folder))
+            prefix += '/' + folder
+
             # Compare common folder and add results to the report
             sub_folder1 = os.path.join(folder1, folder)
             sub_folder2 = os.path.join(folder2, folder)
-            sub_report = _recursive_dircmp(sub_folder1, sub_folder2, prefix1, prefix2)
+            sub_report = _recursive_dircmp(sub_folder1, sub_folder2, prefix)
 
+            # Add results from sub_report to main report
             for key, value in sub_report.items():
                 data[key] += value
 
     return data
+    list(data)
 
-    print(data)
+
+
     
 
 
@@ -137,12 +141,9 @@ def main():
     logger.debug('# SETTING report, dir1, dir2, action VARIABLES #')
     report, dir1, dir2, action = ask()
 
-    dir_compare(dir1, dir2)
-
-    #logger.debug('# SETTING data VARIABLE #')
-    #data = dir_compare()
-
     reporting(report, dir1, dir2, action)
+
+    dir_compare(dir1, dir2, prefix='.')
 
     logger.debug('### ENDING MAIN ###')
 
