@@ -88,6 +88,7 @@ def reporting(report, dir1, dir2, action):
         logger.info('User selected {} as dir1 and {} as dir2'.format(dir1,dir2))
         logger.info('User selected to {} between the folders'.format(action))
     else:
+        logzero.logfile('./logs/BUMS_DEBUG.txt')
         logger.debug('User choose not to use a report.')
 
 def date():
@@ -113,16 +114,19 @@ def dir_compare(dir1,dir2,prefix = '.'):
 
     if dcmp.common_dirs():
         for folder in dcmp.common_dirs:
+            logger.debug('# SETTING PREFIX TO INCLUDE SUB_DIR #')
             prefix += '/' + folder
             
+            logger.debug('# COMPARE SUB DIRECTORIES #')
             sub_dir1 = os.path.join(dir1, folder)
             sub_dir2 = os.path.join(dir2, folder)
             sub_dir_compare = dir_compare(sub_dir1,sub_dir2,prefix)
             
-            for key, value in sub_report.items():
+            logger.debug('# ADD SUB_DIR_COMPARE TO DIR_COMPARE')
+            for key, value in sub_dir_compare.items():
                 data[key] += value
         
-    return data
+    return [data]
 
     logger.info(data)
     
