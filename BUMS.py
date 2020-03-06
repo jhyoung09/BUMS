@@ -125,7 +125,7 @@ def dir_compare(dir1,dir2,prefix = '.'):
         for key, value in sub_dir_compare.items():
             data[key] += value
         
-    return [data]
+    return data
 
     logger.info(data)
     
